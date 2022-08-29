@@ -7,7 +7,9 @@ const server = http.createServer((req, res) => {
   });
   req.on('end', () => {
     console.log(JSON.parse(data)); // 'Buy the milk'
-    res.end('<h1>Hello</h1>');
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<h1>Hello, World!</h1>');
   });
 })
 
