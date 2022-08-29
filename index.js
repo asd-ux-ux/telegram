@@ -4,7 +4,7 @@ const server = http.createServer((req, res) => {
     console.log(req);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
-    res.end('<h1>Hello, World!</h1>');
+    res.end(req);
 })
 
 server.listen(8443);
