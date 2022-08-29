@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
   });
   req.on('end', () => {
     console.log(JSON.parse(data)); // 'Buy the milk'
-    res.end();
+    res.end('<h1>Hello</h1>');
   });
 })
 
