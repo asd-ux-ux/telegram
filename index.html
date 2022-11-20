@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="red" src="Red.webp" alt="" style="width: 90px;">
+    
+    <style>
+        html,
+        body {
+            min-height: 100000px;
+        }
+    </style>
+
+    <script>
+        red.style.transform = 'rotateZ(10deg)';
+        red.style.position = 'fixed';
+        red.style.top = '10px';
+        red.style.left = '10px';
+
+        let redDeg = 10;
+        let scrolled = window.pageYOffset;
+
+        window.addEventListener('scroll', event => {
+            if (window.pageYOffset > scrolled) {
+                redDeg = redDeg + 13;
+                red.style.top = parseFloat(red.style.top) + 9 + 'px';
+                red.style.left = parseFloat(red.style.left) + 12  + 'px';
+                red.style.transform = `rotateZ(${redDeg}deg)`;
+            }
+
+            if (window.pageYOffset < scrolled) {
+                redDeg = redDeg - 13;
+                red.style.top = parseFloat(red.style.top) - 9 + 'px';
+                red.style.left = parseFloat(red.style.left) - 12  + 'px';
+                red.style.transform = `rotateZ(${redDeg}deg)`;                
+            }
+            scrolled = window.pageYOffset;
+        });
+    </script>
+</body>
+</html>
